@@ -1,5 +1,5 @@
 /*  your css code here. If applicable */
-      body {
+    body {
             font-family: Arial, sans-serif;
             max-width: 400px;
             margin: 0 auto;
@@ -13,11 +13,20 @@
             flex-direction: column;
             gap: 15px;
         }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
         input[type="text"],
         input[type="password"] {
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
+            width: 100%;
+        }
+        .checkbox-container {
+            display: flex;
+            align-items: center;
         }
         #checkbox {
             margin-right: 10px;
@@ -39,4 +48,5 @@
             border-radius: 4px;
             cursor: pointer;
             margin-top: 10px;
+            width: 100%;
         }

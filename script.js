@@ -18,30 +18,29 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(`Logged in as ${username}`);
         
         if (checkbox.checked) {
-            localStorage.setItem('rememberedUsername', username);
-            localStorage.setItem('rememberedPassword', password);
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
         } else {
-            localStorage.removeItem('rememberedUsername');
-            localStorage.removeItem('rememberedPassword');
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
         }
         
         checkSavedCredentials();
     });
 
     existingBtn.addEventListener('click', function() {
-        const savedUsername = localStorage.getItem('rememberedUsername');
+        const savedUsername = localStorage.getItem('username');
         if (savedUsername) {
             alert(`Logged in as ${savedUsername}`);
         }
     });
 
-    // Function to check for saved credentials
     function checkSavedCredentials() {
-        const savedUsername = localStorage.getItem('rememberedUsername');
+        const savedUsername = localStorage.getItem('username');
         if (savedUsername) {
             existingBtn.style.display = 'block';
             usernameInput.value = savedUsername;
-            passwordInput.value = localStorage.getItem('rememberedPassword');
+            passwordInput.value = localStorage.getItem('password');
             checkbox.checked = true;
         } else {
             existingBtn.style.display = 'none';
